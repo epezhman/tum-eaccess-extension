@@ -12,13 +12,10 @@ chrome.browserAction.onClicked.addListener(function () {
         var protocol = pathArray[0];
         var host = pathArray[2];
         var tempUrl = protocol + '//' + host + '.eaccess.ub.tum.de';
-		for(var i = 3; i < pathArray.length; i++)
-		{
-			tempUrl += '/' + pathArray[i];
-		}
-		
+	for(var i = 3; i < pathArray.length; i++)
+	{
+		tempUrl += '/' + pathArray[i];
+	}	
         chrome.tabs.update(tab.id, {url: tempUrl});
-	
     });
 });
-
